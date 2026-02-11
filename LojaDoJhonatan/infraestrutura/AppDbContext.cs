@@ -10,12 +10,15 @@ namespace LojaDoJhonatan.infraestrutura
 
             public DbSet<Celular> Celulares { get; set; }
             public DbSet<Cliente> Clientes { get; set; }
-            protected override void OnModelCreating(ModelBuilder modelBuilder)
+            public DbSet<Tecnico> Tecnicos { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
                 modelBuilder.Entity<Celular>()
                     .HasKey(c => c.IdCelular);
                 modelBuilder.Entity<Cliente>()
                     .HasKey(c => c.IdCliente);
+            modelBuilder.Entity<Tecnico>()
+                    .HasKey(c => c.IdTecnico);
         }
         }
     }
